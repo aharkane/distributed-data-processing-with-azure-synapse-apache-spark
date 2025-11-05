@@ -284,8 +284,8 @@ ORDER BY FY, FQ, SalesTerritory, ProductCategory;
 │   ├── 2021.snappy.parquet
 │   ├── customer.xlsx
 │   └── SO*.json
-├── Azure-Synapse-Spark-Complete-Portfolio.ipynb
-├── Azure-Synapse-SQL-Complete-Portfolio.sql
+├── Azure-Synapse-Spark-Notebook.ipynb
+├── Azure-Synapse-SQL-Scripts.sql
 └── README.md
 ```
 
@@ -324,5 +324,3 @@ ORDER BY FY, FQ, SalesTerritory, ProductCategory;
 - Performance optimization (partition pruning, predicate pushdown)
 
 ---
-
-*This project serves as a demonstration of enterprise data engineering practices and cloud data platform expertise.*
