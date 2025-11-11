@@ -1,17 +1,74 @@
 # Azure Synapse Analytics & Spark Data Engineering Project
+---
 
-## Project Overview
+## Table of Contents
 
-This project demonstrates **enterprise-level data engineering** capabilities using Azure Synapse Analytics and Apache Spark. The implementation covers a complete data pipeline including data ingestion, transformation, aggregation, and analytical queries on multi-year sales and customer datasets.
+1. [Executive Summary](#executive-summary)
+2. [Project Architecture](#project-architecture)
+3. [Featured Code Examples](#featured-code-examples)
+   1. [PySpark: Schema Enforcement with Explicit Types](#pyspark-schema-enforcement-with-explicit-types)
+   2. [PySpark: Delta Lake with Time Travel](#pyspark-delta-lake-with-time-travel)
+   3. [PySpark: Data Transformation & Partitioning](#pyspark-data-transformation--partitioning)
+   4. [SQL: OPENROWSET for Serverless Data Exploration](#sql-openrowset-for-serverless-data-exploration)
+   5. [SQL: Multi-Format Queries with Partition Pruning](#sql-multi-format-queries-with-partition-pruning)
+   6. [SQL: CTAS (Create Table As Select) for Data Persistence](#sql-ctas-create-table-as-select-for-data-persistence)
+   7. [SQL: Window Functions for Advanced Analytics](#sql-window-functions-for-advanced-analytics)
+   8. [SQL: Dimensional Model Star Schema Query](#sql-dimensional-model-star-schema-query)
+   
 
-## Project Goals
 
+
+
+
+
+
+
+## Executive Summary
+
+**Overview**  
+This project is realized sudring my preparation to the [exam DP-203: Data Engineering on Microsoft Azure Certfication](https://learn.microsoft.com/en-us/users/amineharkane-6987/credentials/19a5370ba9092706). Also to demonstrates my **enterprise-level data engineering** capabilities using Azure Synapse Analytics and Apache Spark. The implementation covers a complete data pipeline including data ingestion, transformation, aggregation, and analytical queries on multi-year sales and customer datasets.       
+
+**Tasks and Goals**
 - Design and implement scalable data processing workflows in Azure Synapse
 - Demonstrate proficiency with both Spark and SQL for distributed computing
 - Build Delta Lake data structures with ACID compliance and time-travel capabilities
 - Create dimensional models and analytical queries for business intelligence
 
-## Architecture & Technology Stack
+**Key Accomplishments**   
+✓ Processed multi-year datasets with millions of records  
+✓ Implemented Delta Lake with version control and time travel  
+✓ Built dimensional models supporting complex analytical queries  
+✓ Demonstrated advanced Spark transformations and aggregations  
+✓ Designed external tables for cost-effective data exploration  
+✓ Optimized query performance through partitioning strategies
+
+**Skills Demonstrated**
+<table>
+<tr>
+<td>
+
+*Data Engineering:*
+- Distributed data processing with Apache Spark
+- ETL/ELT pipeline design and implementation
+- Delta Lake and ACID transactions
+- Serverless and dedicated SQL pool design
+</td>
+<td>
+    
+*Data Architecture:*
+- Dimensional modeling and star schemas
+- Complex T-SQL with window functions (RANK, SUM OVER)
+- OPENROWSET for external data queries
+- Data aggregation and business metrics
+
+</td>
+</tr>
+</table>
+
+
+## Project Architecture
+
+**Technology Stack**
 
 | Component | Technology |
 |-----------|-----------|
@@ -22,37 +79,29 @@ This project demonstrates **enterprise-level data engineering** capabilities usi
 | **Analytics** | Serverless SQL Pool, Dedicated SQL Pool |
 | **Data Lake Format** | Delta Lake with ACID transactions |
 
-## Project Contents
 
 **Core Deliverables:**
-- `Azure-Synapse-Spark-Complete-Portfolio.ipynb` - PySpark implementations
-- `Azure-Synapse-SQL-Complete-Portfolio.sql` - SQL analytics and transformations
-- `data/` - Source datasets (2019-2021 sales, customer, product data)
+- [`Azure-Synapse-Spark-Complete-Portfolio.ipynb`](https://github.com/aharkane/azure-synapse-analytics-sql-pyspark-data-engineering/blob/main/Azure-Synapse-Spark-Notebook.ipynb) - PySpark implementations
+- [`Azure-Synapse-SQL-Complete-Portfolio.sql`](https://github.com/aharkane/azure-synapse-analytics-sql-pyspark-data-engineering/blob/main/Azure-Synapse-SQL-Scripts.sql) - SQL analytics and transformations
+- [`data/`](https://github.com/aharkane/azure-synapse-analytics-sql-pyspark-data-engineering/tree/main/Data) - Source datasets (2019-2021 sales, customer, product data)
 
-## Implementation Highlights
+**Repository Structure**
 
-### Spark Layer
-- **Data Ingestion**: Load CSV and JSON data from Azure Data Lake
-- **Schema Enforcement**: Explicit schema definitions for data quality and type safety
-- **Transformations**: Column parsing, data cleaning, aggregations
-- **Partitioning Strategy**: Year/Month partitions for optimized query performance
-- **Delta Lake**: ACID transactions, data versioning, and time-travel capabilities
+```
+├── data/
+│   ├── 2019.snappy.parquet
+│   ├── 2020.snappy.parquet
+│   ├── 2021.snappy.parquet
+│   ├── customer.xlsx
+│   └── SO*.json
+├── Azure-Synapse-Spark-Notebook.ipynb
+├── Azure-Synapse-SQL-Scripts.sql
+└── README.md
+```
 
-### SQL Layer
-- **Serverless Exploration**: Direct querying of external data sources without ETL
-- **External Tables**: Virtual tables over Data Lake files for unified access
-- **Performance Optimization**: Partition pruning and predicate pushdown
-- **Dimensional Analytics**: Star schema queries with window functions
-- **Data Persistence**: Create Table As Select (CTAS) for materialized results
+  
 
-## Key Accomplishments
 
-✓ Processed multi-year datasets with millions of records  
-✓ Implemented Delta Lake with version control and time travel  
-✓ Built dimensional models supporting complex analytical queries  
-✓ Demonstrated advanced Spark transformations and aggregations  
-✓ Designed external tables for cost-effective data exploration  
-✓ Optimized query performance through partitioning strategies  
 
 ## Featured Code Examples
 
@@ -275,52 +324,7 @@ GROUP BY d.FiscalYear, d.FiscalQuarter, t.SalesTerritoryRegion, pc.EnglishProduc
 ORDER BY FY, FQ, SalesTerritory, ProductCategory;
 ```
 
-## Repository Structure
 
-```
-├── data/
-│   ├── 2019.snappy.parquet
-│   ├── 2020.snappy.parquet
-│   ├── 2021.snappy.parquet
-│   ├── customer.xlsx
-│   └── SO*.json
-├── Azure-Synapse-Spark-Notebook.ipynb
-├── Azure-Synapse-SQL-Scripts.sql
-└── README.md
-```
 
-## Key Metrics
-
-- **Data Volume**: 2.8+ MB across 2019-2021 sales records
-- **Data Formats**: Multiple formats (Parquet, CSV, JSON)
-- **Processing Approach**: Both batch processing and analytical queries
-- **Storage Optimization**: Snappy compression for Parquet files
-
-## Skills Demonstrated
-
-**Data Engineering:**
-- Distributed data processing with Apache Spark
-- ETL/ELT pipeline design and implementation
-- Delta Lake and ACID transactions
-- Data partitioning strategies for performance
-
-**Data Architecture:**
-- Dimensional modeling and star schemas
-- External data source integration
-- Serverless and dedicated SQL pool design
-- Data Lake organization patterns
-
-**Cloud Technologies:**
-- Azure Synapse Analytics ecosystem
-- Azure Data Lake Storage Gen2
-- Serverless and dedicated compute pools
-- External table and data source management
-
-**Query & Analytics:**
-- Complex T-SQL with window functions (RANK, SUM OVER)
-- OPENROWSET for external data queries
-- Multi-dimensional star schema joins
-- Data aggregation and business metrics
-- Performance optimization (partition pruning, predicate pushdown)
 
 ---
