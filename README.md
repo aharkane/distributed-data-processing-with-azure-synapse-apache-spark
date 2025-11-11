@@ -65,6 +65,19 @@ This project is realized sudring my preparation to the [exam DP-203: Data Engine
 </tr>
 </table>
 
+**Repository Structure**
+
+```
+├── data/
+│   ├── 2019.snappy.parquet
+│   ├── 2020.snappy.parquet
+│   ├── 2021.snappy.parquet
+│   ├── customer.xlsx
+│   └── SO*.json
+├── Azure-Synapse-Spark-Notebook.ipynb
+├── Azure-Synapse-SQL-Scripts.sql
+└── README.md
+```
 
 ## Project Architecture
 
@@ -85,19 +98,7 @@ This project is realized sudring my preparation to the [exam DP-203: Data Engine
 - [`Azure-Synapse-SQL-Complete-Portfolio.sql`](https://github.com/aharkane/azure-synapse-analytics-sql-pyspark-data-engineering/blob/main/Azure-Synapse-SQL-Scripts.sql) - SQL analytics and transformations
 - [`data/`](https://github.com/aharkane/azure-synapse-analytics-sql-pyspark-data-engineering/tree/main/Data) - Source datasets (2019-2021 sales, customer, product data)
 
-**Repository Structure**
 
-```
-├── data/
-│   ├── 2019.snappy.parquet
-│   ├── 2020.snappy.parquet
-│   ├── 2021.snappy.parquet
-│   ├── customer.xlsx
-│   └── SO*.json
-├── Azure-Synapse-Spark-Notebook.ipynb
-├── Azure-Synapse-SQL-Scripts.sql
-└── README.md
-```
 
   
 
