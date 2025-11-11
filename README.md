@@ -1,4 +1,4 @@
-# Azure Synapse Analytics & Spark Data Engineering Project
+# Distributed Data Processing with Azure Synapse & Apache Spark
 ---
 
 ## Table of Contents
